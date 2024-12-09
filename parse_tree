@@ -1,0 +1,5 @@
+digraph {
+	0 [label="program: "]
+	1 [label="stmts: "]
+	0 -> 1
+}

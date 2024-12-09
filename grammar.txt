@@ -1,0 +1,19 @@
+<program> ~  <stmts>
+<stmts> ~  <stmt> | <stmt> ; <stmts> | <stmt> new_line <stmts>
+<stmt> ~  <var> = <expr> | <condition> | <loop>
+<condition> ~ if <log_expr> : <stmts>
+<loop> ~  for <var> in <range> : <stmt> | for <var> in <range> : <stmts> | for <var> in <range> : <loop>
+<var> ~ var <char> <var> | var <digit> <var> |  var '_' <var>
+<range> ~ ( <num> to <num> )
+<char> ~  'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | ' '
+<digit> ~ 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+<num> ~ <digit> | <digit> <num>
+<str> ~ <char> | <char> <str>
+<expr> ~ <log_expr> | <math_expr>
+<math_expr> ~ <term> <math_opr> <term> | <term> <math_opr> <math_expr> | <math_expr> <math_opr> <math_expr>
+<log_expr> ~ <term> <log_opr> <term> | <term> <log_opr> <log_expr> | <log_expr> <log_opr> <log_expr>
+<math_opr> ~ + | - | / | * | %
+<log_opr> ~ == | >= | <= | > | < | !=
+<term> ~ <var> | <const> | <expr>
+<const> ~ <num> | <str>
+<print> ~ print ( <var> ) | print ( " <const> " )
